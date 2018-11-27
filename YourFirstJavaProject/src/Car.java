@@ -81,6 +81,15 @@ public class Car  {
 		
 	}
 
+
+	@Override
+	public String toString() {
+		return "Car [id=" + id + ", name=" + name + ", description=" + description + ", tagline=" + tagline + ", price="
+				+ price + "]";
+	}
+	
+	
+
 }
 
 

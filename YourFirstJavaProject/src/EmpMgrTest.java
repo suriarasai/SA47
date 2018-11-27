@@ -6,8 +6,7 @@ public class EmpMgrTest {
 		Employee e1 = new Employee(1, "dilbert", "pathetic programmer");
 		Employee e2 = new Employee(2, "alice", "another alien programmer");
 		Manager m1 = new Manager(3, "pointy", "god sent manager", 1, "moron");
-		
-
+	
 	}
 
 }
