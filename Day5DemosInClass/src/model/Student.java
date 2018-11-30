@@ -1,4 +1,4 @@
-package student;
+package model;
 
 public class Student implements Comparable<Student> {
 	

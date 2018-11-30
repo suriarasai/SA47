@@ -1,7 +1,11 @@
-package student;
+package test;
 
 import java.util.ArrayList;
 import java.util.Collections;
+
+import model.Student;
+import model.StudentNameComparator;
+import model.StudentNickComparator;
 
 public class TestStudent {
 

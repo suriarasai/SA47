@@ -7,15 +7,19 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import student.Student;
+import model.Student;
 
-public class StudentDAOImpl {
+public class StudentDAOImpl implements StudentDAO {
 	
 	private static final String driver = "com.mysql.jdbc.Driver";
 	private static final String url = "jdbc:mysql://localhost:3306/sa47";
 	private static final String user = "root";
 	private static final String password = "password";
 
+	/* (non-Javadoc)
+	 * @see dao.StudentDAO#findAllStudents()
+	 */
+	@Override
 	public ArrayList<Student> findAllStudents() throws ClassNotFoundException, SQLException {
 		ArrayList<Student> slist = new ArrayList<Student>();
 		// 1. Driver
@@ -29,7 +33,7 @@ public class StudentDAOImpl {
 		// 5. Process
 		while (rs.next()) {
 			Student student = new Student(rs.getInt("id"), rs.getString("name"), rs.getString("naick"));
-			//System.out.println(student.toString());
+			//System.out.println(model.toString());
 			slist.add(student);
 		}
 		statement.close();
@@ -37,6 +41,10 @@ public class StudentDAOImpl {
 		return slist;
 	}
 
+	/* (non-Javadoc)
+	 * @see dao.StudentDAO#insertStudent(model.Student)
+	 */
+	@Override
 	public int insertStudent(Student s) throws ClassNotFoundException, SQLException {
 		// 1. Driver
 		Class.forName(driver);
@@ -56,11 +64,19 @@ public class StudentDAOImpl {
 
 	}
 
+	/* (non-Javadoc)
+	 * @see dao.StudentDAO#updateStudent(model.Student)
+	 */
+	@Override
 	public int updateStudent(Student s) throws ClassNotFoundException, SQLException {
 		// For you to complete and have fun
 		return 0;
 	}
 
+	/* (non-Javadoc)
+	 * @see dao.StudentDAO#deleteStudent(model.Student)
+	 */
+	@Override
 	public int deleteStudent(Student s) throws ClassNotFoundException, SQLException {
 		// For you to complete and have fun
 		return 0;
