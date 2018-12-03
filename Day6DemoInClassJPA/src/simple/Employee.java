@@ -3,10 +3,12 @@ package simple;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="employee")
+@NamedQuery(name="Employee.searchAll", query="select e from Employee e where e.name LIKE :empName")
 public class Employee {
     @Id
     @Column(name="ID")
@@ -62,7 +64,9 @@ public class Employee {
     }
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + ", number=" + pspaceid + "]";
+		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + ", pspaceid=" + pspaceid + ", did="
+				+ did + "]";
 	}
+	
  
 }
