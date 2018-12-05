@@ -69,10 +69,9 @@ public class StudentController extends HttpServlet {
 			break;
 		case "/process":
 			ArrayList<Student> studentList = new ArrayList<Student>();
-			String insert = request.getParameter("ins");
-			System.out.println("I falg " + insert);
+			String insert = request.getParameter("insert");
+			//System.out.println("Insert falg " + insert);
 			if (insert.equalsIgnoreCase("true")) {
-				//Mentor m = new Mentor(1, "SURIA", "Naggy");
 				Mentor m = mdao.findByID(Integer.parseInt(request.getParameter("mid")));
 				Student su = new Student(Integer.parseInt(request.getParameter("id")), request.getParameter("name"),
 						request.getParameter("nick"), m);

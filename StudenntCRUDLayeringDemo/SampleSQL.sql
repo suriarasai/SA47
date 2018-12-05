@@ -17,7 +17,7 @@ CREATE TABLE sa47.student (
   
 INSERT INTO sa47.mentor (id, mname, mnick) VALUES (1, 'SURIA', 'Naggy');
 INSERT INTO sa47.mentor (id, mname, mnick) VALUES (2, 'DEREK', 'Wise');
-  
+
 INSERT INTO sa47.student (id, name, nick, mid) VALUES (1, 'ONG HONG DAH', 'Money', 1);
 INSERT INTO sa47.student (id, name, nick, mid) VALUES (2, 'PARINITA CHOWDHARY', 'Summary Girl', 1);
 INSERT INTO sa47.student (id, name, nick, mid) VALUES (3, 'MAY THAZIN SOE', 'Pleasant', 2);
