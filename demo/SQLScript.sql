@@ -1,8 +1,17 @@
 use sample;
+drop table if exists userdb;
 drop table if exists student_course;
 drop table if exists course;
 drop table if exists student;
 drop table if exists lecturer;
+
+CREATE TABLE sample.userdb (
+  id BIGINT(20) NOT NULL,
+  username VARCHAR(45) NULL,
+  email VARCHAR (45) NULL,
+  address VARCHAR (45) NULL,
+  PRIMARY KEY (id));
+
 CREATE TABLE sample.student (
   nric VARCHAR(9) NOT NULL,
   nick_name VARCHAR(45) NULL,
@@ -15,6 +24,7 @@ CREATE TABLE sample.student (
   user_name VARCHAR(45) NULL,
   password VARCHAR(45) NULL,
   PRIMARY KEY (nric));
+  
  CREATE TABLE sample.lecturer (
   nric VARCHAR(9) NOT NULL,
   name VARCHAR(45) NULL,
@@ -25,6 +35,7 @@ CREATE TABLE sample.student (
   user_name VARCHAR(45) NULL,
   password VARCHAR(45) NULL,
   PRIMARY KEY (nric));
+  
   CREATE TABLE sample.course (
   cid INT NOT NULL AUTO_INCREMENT,
   course_code VARCHAR(45) NULL,
@@ -56,6 +67,10 @@ CREATE TABLE sample.student (
     REFERENCES sample.student (nric)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
+
+INSERT INTO sample.userdb (id, username, email, address) VALUES (1, "tom", "tom@nus.edu.sg", "Tom's Apartment @ Cartoon Network");
+INSERT INTO sample.userdb (id, username, email, address) VALUES (2, "jerry", "jerry@nus.edu.sg", "Tom's Apartment @ Cartoon Network");
+INSERT INTO sample.userdb (id, username, email, address) VALUES (3, "nibbles", "nibbles@nus.edu.sg", "Tom's Apartment @ Cartoon Network");
 
 INSERT INTO sample.student (nric, nick_name, mark, name, dob, phone_number, email, address, user_name, password) VALUES ("S1234567A", "Interactive", 78, "ONG HONG DAH", '1990-12-12', 12345, "id1@u.nus.edu", "25 Heng Mui Keng Terrace", "student1", "password");
 INSERT INTO sample.student (nric, nick_name, mark, name, dob, phone_number, email, address, user_name, password) VALUES ("S1234567B", "Helpful", 88, "PARINITA CHOWDHARY", '1990-12-12', 12345, "id2@u.nus.edu", "25 Heng Mui Keng Terrace", "student2", "password");
