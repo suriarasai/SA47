@@ -6,6 +6,7 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -25,7 +26,7 @@ public class Lecturer {
 	@Column(name="user_name")
 	private String userName;
 	private String password;
-	@OneToMany(mappedBy="lecturer",cascade=CascadeType.ALL)
+	@OneToMany(fetch = FetchType.EAGER, mappedBy="lecturer",cascade=CascadeType.ALL)
 	private Set<Course> courses = new HashSet<Course>();
 	//Constructor
 	public Lecturer() {
@@ -117,7 +118,7 @@ public class Lecturer {
 	public String toString() {
 		return "Lecturer [nric=" + nric + ", name=" + name + ", nickName=" + nickName + ", phoneNumber=" + phoneNumber
 				+ ", email=" + email + ", address=" + address + ", userName=" + userName + ", password=" + password
-				+ ", courses=" + courses + "]";
+				+ "]";
 	}
 	@Override
 	public int hashCode() {
