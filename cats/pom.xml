@@ -17,7 +17,7 @@
 		<spring-data-jpa.version>1.10.0.RELEASE</spring-data-jpa.version>
 		<hibernate.version>5.1.0.Final</hibernate.version>
 		<hibernate-validator.version>5.2.4.Final</hibernate-validator.version>
-		<mysql-connector.version>5.1.44</mysql-connector.version>
+		<mysql-connector.version>8.0.16</mysql-connector.version>
 		<commons-dbcp.version>1.4</commons-dbcp.version>
 		<servlet.version>3.1.0</servlet.version>
 		<jsp.version>2.3.1</jsp.version>
